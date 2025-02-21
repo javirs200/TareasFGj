@@ -1,3 +1,5 @@
+#modulo que contiene las funciones de impresion en consola
+
 def showUsage():
     print("Uso: python TareaTecnica.py <indice> <texto> <opcion>\n")
     print("Donde:")
