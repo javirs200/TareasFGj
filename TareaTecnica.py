@@ -4,15 +4,20 @@ from Utils import ui
 from Cryptography import Cesar
 
 def main():
+
+    ui.showEmptyLine()
+
     index,text,option = Input.getInputs()
     ui.showReadedParams(index,text,option)
+
+    ui.showEmptyLine()
     
     if option == "-c":
         output = Cesar.encrypt(text, index)
         ui.showEncryptedText(output)
         
     elif option == "-d":
-        output = Cesar.encrypt(text, index)
+        output = Cesar.decrypt(text, index)
         ui.showDecryptedText(output)
         
     pass

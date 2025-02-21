@@ -1,18 +1,18 @@
 def showUsage():
-    print("Uso: python TareaTecnica.py <indice> <texto> <opcion>")
+    print("Uso: python TareaTecnica.py <indice> <texto> <opcion>\n")
     print("Donde:")
     print("<indice> : un numero entero")
     print("<texto> : una cadena de caracteres")
-    print("<opcion> : -c para cifrar el texto, -d para descifrar el texto")
+    print("<opcion> : -c para cifrar el texto, -d para descifrar el texto\n")
 
 def showindexError():
-    print("Error: El parametro indice debe ser un entero")
+    print("Error: El parametro indice debe ser un entero \n")
 
 def showtextError():
-    print("Error: El texto debe ser una cadena de caracteres")
+    print("Error: El texto debe ser una cadena de caracteres \n")
 
 def showoptionError():
-    print("Error: La opcion debe ser -c o -d")
+    print("Error: La opcion debe ser -c o -d \n")
 
 def showReadedParams(index,text,option):
     print("El indice es: ", index)
@@ -21,9 +21,11 @@ def showReadedParams(index,text,option):
 
 def showEncryptedText(output):
     print("Cifrando... \n")
-    print("El texto cifrado es: ",output)
+    print("El texto cifrado es: ",output ,"\n")
 
 def showDecryptedText(output):
     print("Descifrando... \n")
-    print("El texto descifrado es: ",output)
-    
+    print("El texto descifrado es: ",output ,"\n")
+
+def showEmptyLine():
+    print("")   

@@ -1,25 +1,22 @@
-import sys # libreria de acceso al sistema operativo
+import sys
 
 from Utils import ui
 
-def getInputs():
-    # inicializamos los parametros con valores por defecto
-    index = 13
-    text = "Yn threen qr Phon: ybf zbgvibf dhr yyrineba n ryyn l, fboer gbqb, inybene l rkcyvpne ry vzcnpgb qr yn cebcntnaqn ra RRHH."
-    option = "-d"
-
-    print(sys.argv)
-
-    #utilizamos la libreria sys para recoger los parametros introducidos por linea de comandos
-    if len(sys.argv) == 3:
-        index = sys.argv[1]
-        text = sys.argv[2]
-        option = sys.argv[3]
+def getInputs()->int|str|str:
+    
+    if len(sys.argv) == 4:
+        argIndex = sys.argv[1]
+        argText = sys.argv[2]
+        argOption = sys.argv[3]
     else:
         ui.showUsage()
         sys.exit()
 
-    _validateInputs(index,text,option)
+    _validateInputs(argIndex,argText,argOption)
+
+    index = int(argIndex)
+    text = str(argText)
+    option = str(argOption)
     
     return index,text,option
 
@@ -31,8 +28,7 @@ def _validateInputs(index,text,option):
         ui.showindexError()
         error = True
 
-    if text.isalnum():
-        print(text)
+    if text.isdigit():
         ui.showtextError()
         error = True
 
@@ -43,12 +39,5 @@ def _validateInputs(index,text,option):
     if error:
         ui.showUsage()
         sys.exit()
-
     
-
-
-
-
-
-
-           
+    return not error 
