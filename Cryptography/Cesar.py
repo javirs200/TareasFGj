@@ -4,10 +4,10 @@ def encrypt(text:str,index:int)->str:
     encryptedText = ""
     # bucle para realizar el cifrado de cada caracter del texto
     for c in text:
-        #comprobacion de caracteres y espacios para evitar signos de puntuacion y los espacios 
+        #comprobacion de caracteres y espacios para evitar signos de puntuacion , numeros y los espacios 
         if c.isalpha() and not c.isspace():
 
-            #asignacionde caracter base en funcion de mayusculas y minusculas
+            #asignacion de caracter base en funcion de mayusculas y minusculas
             if c.isupper():
                 baseChar = 'A'
             else:
@@ -23,6 +23,7 @@ def encrypt(text:str,index:int)->str:
 
 def decrypt(text:str,index:int)->str:
     
+    #se realiza el desplazamiento con el indice negativo para obtener el texto en claro
     decryptedText = encrypt(text,-index)
 
     return decryptedText

@@ -17,10 +17,12 @@ def main():
     
     #seleccion de la opcion de cifrado o descifrado
     if option == "-c":
+        #cifrado
         output = Cesar.encrypt(text, index)
         ui.showEncryptedText(output)
         
     elif option == "-d":
+        #descifrado
         output = Cesar.decrypt(text, index)
         ui.showDecryptedText(output)
         

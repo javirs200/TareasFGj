@@ -14,8 +14,10 @@ def getInputs() -> tuple[int,str,str]:
         ui.showUsage()
         sys.exit()
 
+    #validacion de los argumentos de entrada
     _validateInputs(argIndex,argText,argOption)
 
+    #conversion de los argumentos genericos a los tipos de datos correctos
     index = int(argIndex)
     text = str(argText)
     option = str(argOption)
