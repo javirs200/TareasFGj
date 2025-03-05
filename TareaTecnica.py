@@ -8,14 +8,14 @@ def main():
 
     ui.showEmptyLine()
 
-    #obtencion de los parametros de entrada
+    #obtencion de los parametros de entrada y su validacion
     index,text,option = Input.getInputs()
 
     ui.showReadedParams(index,text,option)
 
     ui.showEmptyLine()
     
-    #seleccion de la opcion de cifrado o descifrado
+    #seleccion de la opcion de cifrado o descifrado ( las opciones ya entran validadas aqui las valida getInputs, no es necesario validarlas de nuevo)
     if option == "-c":
         #cifrado
         output = Cesar.encrypt(text, index)
@@ -26,7 +26,6 @@ def main():
         output = Cesar.decrypt(text, index)
         ui.showDecryptedText(output)
         
-    pass
 
 if __name__ == '__main__':
     main()

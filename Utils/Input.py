@@ -10,6 +10,8 @@ def getInputs() -> tuple[int,str,str]:
         argText = sys.argv[2]
         argOption = sys.argv[3]
     else:
+        # si el numero de argumentos no es el correcto se muestra un mensaje de error
+        ui.shownumberofargumentsError()
         # si el numero de argumentos es incorecto se detiene el programa y se muestra las instrucciones de uso
         ui.showUsage()
         sys.exit()
@@ -25,26 +27,30 @@ def getInputs() -> tuple[int,str,str]:
     return index,text,option
 
 #funcion para validar los argumentos de entrada segun especificaciones
-def _validateInputs(index,text,option):
+def _validateInputs(index:str,text:str,option:str):
 
     error = False
 
     # comprobacion del indice como numerico
     if not index.isdigit():
+        # si el indice no es numerico muestra un mensaje de error
         ui.showindexError()
         error = True
 
     # comprobacion del texto
     if text.isdigit():
+        # si el texto es unicamente numerico muestra un mensaje de error
         ui.showtextError()
         error = True
 
     # comprobacion de la opcion
     if option != "-c" and option != "-d":
+        # si la opcion no es -c o -d muestra un mensaje de error
         ui.showoptionError()
         error = True
     
     if error:
+
         ui.showUsage()
         sys.exit()
     

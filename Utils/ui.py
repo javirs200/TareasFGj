@@ -16,6 +16,9 @@ def showtextError():
 def showoptionError():
     print("Error: La opcion debe ser -c o -d \n")
 
+def shownumberofargumentsError():
+    print("Error: Numero de argumentos incorrecto \n")
+
 def showReadedParams(index,text,option):
     print("El indice es: ", index)
     print("El texto es: ", text)
