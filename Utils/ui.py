@@ -1,23 +1,26 @@
 #modulo que contiene las funciones de impresion en consola
 
 def showUsage():
-    print("Uso: python TareaTecnica.py <indice> <texto> <opcion>\n")
-    print("Donde:")
-    print("<indice> : un numero entero")
-    print("<texto> : una cadena de caracteres")
-    print("<opcion> : -c para cifrar el texto, -d para descifrar el texto\n")
+    print("Uso: Python TareaTecnica.py <indice> <texto> <opcion>\n")
+    print("Donde: \n")
+    print("<indice> : un numero entero , desplazamiento de caracteres.")
+    print("<texto> : una cadena de caracteres , texto a cifrar o descifrar.")
+    print("<opcion> : -c para cifrar el texto, -d para descifrar el texto.\n")
 
 def showindexError():
-    print("Error: El parametro indice debe ser un entero \n")
+    print("Error, El parametro indice introducido no es un numero entero . \n")
+
+def showindexLowValueError():
+    print("Error, El parametro indice debe ser mayor que 0 . \n")
 
 def showtextError():
-    print("Error: El texto debe ser una cadena de caracteres \n")
+    print("Error, el texto se ha reconocido como unicamente numerico , debe ser una cadena de texto .\n")
 
 def showoptionError():
-    print("Error: La opcion debe ser -c o -d \n")
+    print("Error, la opcion introducida es incorrecta , debe ser -c o -d . \n")
 
-def shownumberofargumentsError():
-    print("Error: Numero de argumentos incorrecto \n")
+def showNumberofargumentsError():
+    print("Error, el numero de argumentos introducidos no es el adecuado , por favor revise las instrucciones de uso . \n")
 
 def showReadedParams(index,text,option):
     print("El indice es: ", index)

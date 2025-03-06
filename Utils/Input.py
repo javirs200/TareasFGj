@@ -2,7 +2,9 @@ import sys
 
 from Utils import ui
 
+# funcion para obtener los argumentos de entrada y validarlos
 def getInputs() -> tuple[int,str,str]:
+    '''this function reads the arguments from the command line and validates them''' 
     
     #lectura de argumentos de la linea de comandos
     if len(sys.argv) == 4:
@@ -11,7 +13,7 @@ def getInputs() -> tuple[int,str,str]:
         argOption = sys.argv[3]
     else:
         # si el numero de argumentos no es el correcto se muestra un mensaje de error
-        ui.shownumberofargumentsError()
+        ui.showNumberofargumentsError()
         # si el numero de argumentos es incorecto se detiene el programa y se muestra las instrucciones de uso
         ui.showUsage()
         sys.exit()
@@ -26,6 +28,7 @@ def getInputs() -> tuple[int,str,str]:
     
     return index,text,option
 
+
 #funcion para validar los argumentos de entrada segun especificaciones
 def _validateInputs(index:str,text:str,option:str):
 
@@ -36,6 +39,12 @@ def _validateInputs(index:str,text:str,option:str):
         # si el indice no es numerico muestra un mensaje de error
         ui.showindexError()
         error = True
+    else:
+        # comprobacion del indice como entero
+        if int(index) <= 0:
+            # si el indice es menor o igual a 0 muestra un mensaje de error
+            ui.showindexLowValueError()
+            error = True
 
     # comprobacion del texto
     if text.isdigit():
