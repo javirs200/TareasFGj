@@ -1,15 +1,25 @@
+# module for input management
+# Authors: Javier Miranda
+# version: 1.2.0
+
+# libreria de manejo de sistema operativo
 import sys
 
+# importacion de modulos propios
 from Utils import ui
 
 # funcion para obtener los argumentos de entrada y validarlos
 def getInputs() -> tuple[int,str,str]:
     '''this function reads the arguments from the command line and validates them''' 
     
-    #lectura de argumentos de la linea de comandos
-    if len(sys.argv) == 4:
+    #lectura de argumentos en crudo de la linea de comandos
+    # sys.argv , lista de argumentos de la línea de comandos pasados a un script de Python
+    if len(sys.argv) == 4:  # argumento 0 es el nombre del script , por lo que se espera 4 argumentos en total
+        # argumento 1 es el indice
         argIndex = sys.argv[1]
+        # argumento 2 es el texto
         argText = sys.argv[2]
+        # argumento 3 es la opcion
         argOption = sys.argv[3]
     else:
         # si el numero de argumentos no es el correcto se muestra un mensaje de error
@@ -21,7 +31,7 @@ def getInputs() -> tuple[int,str,str]:
     #validacion de los argumentos de entrada
     _validateInputs(argIndex,argText,argOption)
 
-    #conversion de los argumentos genericos a los tipos de datos correctos
+    #conversion explicita de los argumentos genericos a los tipos de datos concretos
     index = int(argIndex)
     text = str(argText)
     option = str(argOption)
@@ -59,7 +69,7 @@ def _validateInputs(index:str,text:str,option:str):
         error = True
     
     if error:
-
+        # si hay algun error se muestra las instrucciones de uso y se detiene el programa
         ui.showUsage()
         sys.exit()
     

@@ -1,4 +1,6 @@
-#modulo que contiene las funciones de impresion en consola
+# module for ui management
+# Authors: Javier Miranda
+# version: 1.2.0
 
 def showUsage():
     print("Uso: Python TareaTecnica.py <indice> <texto> <opcion>\n")

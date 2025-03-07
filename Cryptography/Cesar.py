@@ -1,3 +1,6 @@
+# module for Caesar criptography algorithm
+# Authors: Javier Miranda
+# version: 1.2.0
 
 def encrypt(text:str,index:int)->str:
     #variable para almacenar el texto resultante
@@ -23,7 +26,7 @@ def encrypt(text:str,index:int)->str:
 
 def decrypt(text:str,index:int)->str:
     
-    #se realiza el desplazamiento con el indice negativo para obtener el texto en claro
+    #se realiza el cifrado con el indice de desplazamiento negativo para obtener el texto en claro
     decryptedText = encrypt(text,-index)
 
     return decryptedText
