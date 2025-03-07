@@ -22,7 +22,8 @@ def main():
     # linea en blanco para separar la salida de la ejecucion del programa
     ui.showEmptyLine()
     
-    #seleccion de la opcion de cifrado o descifrado ( las opciones ya entran validadas aqui, las valida getInputs, no es necesario validarlas de nuevo)
+    #seleccion de la opcion de cifrado o descifrado 
+    # las opciones ya entran validadas aqui, las valida getInputs, no es necesario validarlas de nuevo
     if option == "-c":
         #cifrado
         output = Cesar.encrypt(text, index)

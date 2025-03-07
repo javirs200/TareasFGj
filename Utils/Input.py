@@ -41,9 +41,8 @@ def getInputs() -> tuple[int,str,str]:
 
 #funcion para validar los argumentos de entrada segun especificaciones
 def _validateInputs(index:str,text:str,option:str):
-
     error = False
-
+    
     # comprobacion del indice como numerico
     if not index.isdigit():
         # si el indice no es numerico muestra un mensaje de error
