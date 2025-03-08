@@ -2,13 +2,17 @@
 # Authors: Javier Miranda
 # version: 1.2.0
 
+# libreria para expresiones regulares	
+import re
+
 def encrypt(text:str,index:int)->str:
     #variable para almacenar el texto resultante
     encryptedText = ""
     # bucle para realizar el cifrado de cada caracter del texto
     for c in text:
-        #comprobacion de caracteres y espacios para evitar signos de puntuacion , numeros y los espacios 
-        if c.isalpha() and not c.isspace():
+        #comprobacion de caracteres mediante expresion regular 
+        # para evitar signos de puntuacion , numeros , espacios y carcteres especiales 
+        if re.match('[a-zA-Z]',c):
 
             #asignacion de caracter base en funcion de mayusculas y minusculas
             if c.isupper():
