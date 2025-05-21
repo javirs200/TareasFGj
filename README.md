@@ -21,10 +21,6 @@ Este repositorio contiene el código fuente de los programas que se han necesari
 
 El objetivo principal de este repositorio es servir como registro público de los trabajos realizados durante estos programas formativos. Además, se espera que puedan ser útiles para futuros participantes y proyectos similares.
 
-## Licencia
-
-Este proyecto está bajo la licencia [Insertar tipo de licencia aquí].
-
 # Autor
 P J M T
 
