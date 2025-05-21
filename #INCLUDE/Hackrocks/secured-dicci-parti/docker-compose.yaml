@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+
+  flask:
+    build: ./
+    volumes:
+      - ./:/app
+    ports:
+      # public:local
+      - "11201:5000"
+    container_name: securedicci
+    restart: always
+    environment:
+      - APP_NAME=securedicci

@@ -1,0 +1,20 @@
+#PyCryptodome
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad
+from binascii import hexlify as heg , unhexlify as unheg
+
+adminToken = 'd56473389e803bb55d9cd296dc110da926a90a02e01cb423fe30b56d175ff92a0bfe7dfa93a6e57bf745a7c307f45581862b806dc2a761d7e2b6983e38ac1351dfe4c8e360c5c87d6461e027ad33d13fb088a9769dce7bafb76c665e175a9c39d94c112c1358b82d15d6fcce077c32a1d5dfbf699f1f482e200d0fabd83186af286406134f2566d6395341fc5c13a73286775e58f271fb8e04b9f74511274f02e34b5c0b3ecb2a58ab1d6e581e966cc7b64107b871ff403940e199bc73faa7ef862b806dc2a761d7e2b6983e38ac13518932d8914c93c90dda44b135257d1eb1a38a1a8e387e3ad6c97b644933ca707ca070310e4e84fcf685ffadf11ef48ee784649bef318f0852928a9196d84e25aa8485f1c5c70519a4f198786697926877ad3c967d8ff8b5e639f03114e9a887afaad60ee2801ab64615be8cb2dff808ff1f0e85dd9945c954cd3cb3443a38b2954437e48ace3261de0a74af91172088adfb5a7a0b36d8dca3edb83094052cfb03751629b6f28b8e726bb063a92e704eec9202cdde05a7f7e0c202ec921be854d5'
+
+key1 = b'34313930343431393034343139303434'
+key2 = b'37373235303737323530373732353037'
+
+bytes_key1 = unheg(key1)
+bytes_key2 = unheg(key2)
+
+ciphertext = bytes.fromhex(adminToken)
+
+decrypted = AES.new(bytes_key2, AES.MODE_ECB).decrypt(ciphertext)
+
+decrypted = AES.new(bytes_key1, AES.MODE_ECB).decrypt(decrypted)
+
+print(f"\n Texto plano desencriptado: {decrypted.hex()}")

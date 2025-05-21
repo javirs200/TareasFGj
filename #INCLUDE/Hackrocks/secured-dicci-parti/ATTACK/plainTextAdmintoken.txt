@@ -1,0 +1,3 @@
+FLAG plain -> the code secret is 'i_hide_a_lot_of_secrets' !!!!
+
+token_auth -> i_hide_a_lot_of_secrets
